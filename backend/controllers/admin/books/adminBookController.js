@@ -117,10 +117,16 @@ const addBook = asyncHandler(async (req, res) => {
     res.status(201).json(book);
 });
 
+// @desc    Update book
+// @route   GET /admin/books/updateBook
+// @access  Private
 const updateBook = asyncHandler(async (req, res) => {
     res.status(200).json({ message: 'Update Book' });
 });
 
+// @desc    Update book
+// @route   PUT /admin/books/updateBook/:id
+// @access  Private
 const updateBookID = asyncHandler(async (req, res) => {
     const book = await Book.findById(req.params.id);
 
@@ -136,10 +142,16 @@ const updateBookID = asyncHandler(async (req, res) => {
     res.status(200).json(updatedBook);
 });
 
+// @desc    Delete book
+// @route   PUT /admin/books/deleteBook
+// @access  Private
 const deleteBook = asyncHandler(async (req, res) => {
     res.status(200).json({ message: 'Delete Book' });
 });
 
+// @desc    Delete book
+// @route   PUT /admin/books/deleteBook/:id
+// @access  Private
 const deleteBookID = asyncHandler(async (req, res) => {
     const book = await Book.findByIdAndDelete(req.params.id);
 

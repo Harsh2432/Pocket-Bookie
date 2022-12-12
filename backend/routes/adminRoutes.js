@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { adminRoute } = require('../controllers/admin/adminController');
+const { adminRoute,
+    adminLogin
+} = require('../controllers/admin/adminController');
+const { protect } = require('../middleware/authMiddleware');
 
-router.get('/', adminRoute);
+router.post('/', adminLogin);
+router.get('/me', protect, adminRoute);
 
 router.use('/books', require('./admin/adminBookRoutes'));
 router.use('/users', require('./admin/adminUserRoutes'));

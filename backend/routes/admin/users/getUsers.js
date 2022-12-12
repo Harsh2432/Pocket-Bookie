@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { addBook } = require('../../../controllers/admin/books/adminBookController');
+const { getUsers } = require('../../../controllers/admin/users/adminUserController');
 const { protect } = require('../../../middleware/authMiddleware');
 
-router.post('/', protect, addBook);
+router.get('/', protect, getUsers);
 
 module.exports = router;
