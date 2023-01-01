@@ -2,9 +2,6 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const asyncHandler = require('express-async-handler');
 const User = require('../../models/userModel');
-const UserBooksLiked = require('../../models/userBooksLikedModel');
-const UserBooksPurchased = require('../../models/userBooksPurchasedModel');
-const UserProfile = require('../../models/userProfileModel');
 
 // @desc    Register new user
 // @route   POST /users/register
@@ -32,14 +29,21 @@ const registerUser = asyncHandler(async (req, res) => {
     // Create user
     const user = await User.create({
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        firstName: '',
+        lastName: '',
+        gender: '',
+        mobile: '',
+        address: '',
+        booksLiked: [],
+        booksPurchased: []
     });
 
     if (user) {
         res.status(201).json({
             _id: user.id,
             email: user.email,
-            token: generateToken(user._id)
+            token: generateToken(user._id),
         });
     }
     else {
@@ -86,17 +90,23 @@ const getMe = asyncHandler(async (req, res) => {
 // @route   GET /users/me/profile
 // @access  Private
 const profile = asyncHandler(async (req, res) => {
-    const userProfile = await UserProfile.find({ user: req.user.id });
+    const { _id, email, firstName, lastName, gender, mobile, address } = await User.findById(req.user.id);
 
-    res.status(200).json(userProfile);
+    res.status(200).json({
+        id: _id,
+        email,
+        firstName,
+        lastName,
+        gender,
+        mobile,
+        address
+    });
 });
 
 // @desc    Edit user profile
 // @route   POST /users/me/editProfile
 // @access  Private
 const editProfile = asyncHandler(async (req, res) => {
-    const userProfile = await UserProfile.find({ user: req.user.id });
-
     if (!req.body.firstName) {
         res.status(400);
         throw new Error('Please add your first name');
@@ -118,12 +128,8 @@ const editProfile = asyncHandler(async (req, res) => {
         throw new Error('Please add your address');
     };
 
-    const profile = await UserProfile.create(userProfile, {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        gender: req.body.gender,
-        mobile: req.body.mobile,
-        address: req.body.address
+    const profile = await User.findByIdAndUpdate(req.user.id, req.body, {
+        new: true
     });
 
     res.status(201).json(profile);
@@ -133,18 +139,26 @@ const editProfile = asyncHandler(async (req, res) => {
 // @route   GET /users/me/booksLiked
 // @access  Private
 const booksLiked = asyncHandler(async (req, res) => {
-    const likedBooks = await UserBooksLiked.find({ user: req.user.id })
+    const { _id, email, booksLiked } = await User.findById(req.user.id);
 
-    res.status(200).json(likedBooks);
+    res.status(200).json({
+        id: _id,
+        email,
+        booksLiked
+    });
 });
 
 // @desc    Get user purchased books
 // @route   GET /users/me/booksPurchased
 // @access  Private
 const booksPurchased = asyncHandler(async (req, res) => {
-    const purchasedBooks = await UserBooksPurchased.find({ user: req.user.id });
+    const { _id, email, booksPurchased } = await User.findById(req.user.id);
 
-    res.status(200).json(purchasedBooks);
+    res.status(200).json({
+        id: _id,
+        email,
+        booksPurchased
+    });
 });
 
 // Generate JWT

@@ -7,6 +7,7 @@ const Admin = require('../../models/adminModel');
 // @route   GET /admin/me
 // @access  Private
 const adminRoute = asyncHandler(async (req, res) => {
+    const { email, password } = await Admin.findById({ email });
     res.status(200).json({ message: 'Admin Page' });
 });
 
