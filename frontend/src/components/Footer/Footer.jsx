@@ -40,7 +40,7 @@ class Footer extends React.Component {
                         <h3>contact info</h3>
                         <a href="#"> <i className="fas fa-phone"></i> +123-456-7890 </a>
                         <a href="#"> <i className="fas fa-phone"></i> +098-765-4321 </a>
-                        <a href="#"> <i className="fas fa-envelope"></i> bookly@gmail.com </a>
+                        <a href="#" className="gmail"> <i className="fas fa-envelope"></i> bookly@gmail.com </a>
                         <img src={require("../../assets/worldmap.png")} className="map" alt=""></img>
                     </div>
 
@@ -53,8 +53,7 @@ class Footer extends React.Component {
                     <a href="#" className="fab fa-linkedin"></a>
                     <a href="#" className="fab fa-pinterest"></a>
                 </div>
-
-                <div className="credit"> created by <span>Harsh Jadhav</span> | all rights reserved! </div>
+                <div className="credit"> copyright © 2023 <a href="#" alt=""><span>bookly</span></a> | all rights reserved! </div>
 
             </section>
         );

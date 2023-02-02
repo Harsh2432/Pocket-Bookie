@@ -41,7 +41,7 @@ class Blogs extends React.Component {
                                 <img src={require("../../assets/blog-1.jpg")} alt=""></img>
                             </div>
                             <div className="content">
-                                <h3>blog title goes here</h3>
+                                <h3>Success through Reading</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
                                 <a href="#" className="btn">read more</a>
                             </div>
@@ -52,7 +52,7 @@ class Blogs extends React.Component {
                                 <img src={require("../../assets/blog-2.jpg")} alt=""></img>
                             </div>
                             <div className="content">
-                                <h3>blog title goes here</h3>
+                                <h3>10 Reading Mistakes</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
                                 <a href="#" className="btn">read more</a>
                             </div>
@@ -63,7 +63,7 @@ class Blogs extends React.Component {
                                 <img src={require("../../assets/blog-3.jpg")} alt=""></img>
                             </div>
                             <div className="content">
-                                <h3>blog title goes here</h3>
+                                <h3>Study Less, Study Smart</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
                                 <a href="#" className="btn">read more</a>
                             </div>
@@ -74,7 +74,7 @@ class Blogs extends React.Component {
                                 <img src={require("../../assets/blog-4.jpg")} alt=""></img>
                             </div>
                             <div className="content">
-                                <h3>blog title goes here</h3>
+                                <h3>Become a Good Reader</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
                                 <a href="#" className="btn">read more</a>
                             </div>
@@ -85,7 +85,7 @@ class Blogs extends React.Component {
                                 <img src={require("../../assets/blog-5.jpg")} alt=""></img>
                             </div>
                             <div className="content">
-                                <h3>blog title goes here</h3>
+                                <h3>10 Reading Tips</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
                                 <a href="#" className="btn">read more</a>
                             </div>
