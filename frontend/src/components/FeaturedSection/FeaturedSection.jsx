@@ -45,7 +45,6 @@ class FeaturedSection extends React.Component {
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -54,14 +53,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -70,14 +68,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -86,14 +83,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -102,14 +98,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -118,14 +113,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -134,14 +128,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -150,14 +143,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -166,14 +158,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -182,14 +173,13 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>
 
                         <div className="swiper-slide box">
                             <div className="icons">
-                                <a href="#" className="fas fa-search"></a>
                                 <a href="#" className="fas fa-heart"></a>
                                 <a href="#" className="fas fa-eye"></a>
                             </div>
@@ -198,7 +188,7 @@ class FeaturedSection extends React.Component {
                             </div>
                             <div className="content">
                                 <h3>featured books</h3>
-                                <div className="price">$15.99 <span>$20.99</span></div>
+                                <div className="price">₹15.99 <span>₹20.99</span></div>
                                 <a href="#" className="btn">add to cart</a>
                             </div>
                         </div>

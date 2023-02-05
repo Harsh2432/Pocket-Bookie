@@ -32,7 +32,7 @@ class Home extends React.Component {
 
                     <div className="content">
                         <h3>upto 75% off</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex minima at!</p>
+                        <p>One click for the most premium collection of all different genres and a ticket to be teleported into the world of fiction, the perfect stop for every book-a-holic</p>
                         <a href="#" className="btn">shop now</a>
                     </div>
 

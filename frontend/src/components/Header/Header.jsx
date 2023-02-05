@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../App.css';
 
 window.onscroll = () => {
@@ -20,7 +21,6 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.searchActive = this.searchActive.bind(this);
-        this.loginActive = this.loginActive.bind(this);
     };
     searchActive() {
         const searchForm = document.querySelector('.search-form');
@@ -29,23 +29,13 @@ class Header extends React.Component {
             searchForm.classList.toggle('active');
         });
     };
-    loginActive() {
-        const loginForm = document.querySelector('.login-form-container');
-        const loginBtn = document.querySelector('#login-btn');
-        loginBtn.addEventListener('click', () => {
-            console.log(loginForm.classList);
-            loginForm.classList.toggle('active');
-        });
-    };
     render() {
         return (
             <header className="header">
 
                 <div className="header-1">
 
-                    <a href="#" className="logo">
-                        <i className="fas fa-book"></i> bookly
-                    </a>
+                    <Link to='/' className='logo'><i className="fas fa-book"></i> bookly</Link>
 
                     <form action="" className="search-form">
                         <input type="search" name="" placeholder="search books..." id="search-box"></input>
@@ -54,9 +44,8 @@ class Header extends React.Component {
 
                     <div className="icons">
                         <div id="search-btn" className="fas fa-search" onClick={this.searchActive}></div>
-                        <a href="#" className="fas fa-heart"></a>
-                        <a href="#" className="fas fa-shopping-cart"></a>
-                        <div id="login-btn" className="fas fa-user" onClick={this.loginActive}></div>
+                        <Link to='/cart' className="fas fa-shopping-cart"></Link>
+                        <Link to='/login' className="fas fa-user logo"></Link>
                     </div>
 
                 </div>

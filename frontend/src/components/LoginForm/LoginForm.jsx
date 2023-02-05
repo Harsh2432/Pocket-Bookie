@@ -1,24 +1,13 @@
 import React from 'react';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.closeLogin = this.closeLogin.bind(this);
-    };
-    closeLogin() {
-        const loginForm = document.querySelector('.login-form-container');
-        const closeLoginBtn = document.querySelector('#close-login-btn');
-        closeLoginBtn.addEventListener('click', () => {
-            console.log(loginForm.classList);
-            loginForm.classList.remove('active');
-        });
-    };
     render() {
         return (
             <div className="login-form-container">
 
-                <div id="close-login-btn" onClick={this.closeLogin} className="fas fa-times"></div>
+                <Link to='/' id='back-to-homepage' className="fas fa-backward"></Link>
 
                 <form action="">
                     <h3>sign in</h3>
@@ -32,7 +21,7 @@ class LoginForm extends React.Component {
                     </div>
                     <input type="submit" value="sign in" className="btn"></input>
                     <p>forget password ? <a href="#">click here</a></p>
-                    <p>don't have an account ? <a href="#">create one</a></p>
+                    <p>don't have an account ? <Link to='/register'>create account</Link></p>
                 </form>
 
             </div>

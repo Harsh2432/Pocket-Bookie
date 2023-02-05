@@ -7,10 +7,10 @@ const User = require('../../models/userModel');
 // @route   POST /users/register
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, confirmPassword } = req.body;
 
     // Check if user exists
-    if (!email || !password) {
+    if (!email || !password || !confirmPassword) {
         res.status(400);
         throw new Error('Please add all fields');
     };
@@ -22,33 +22,39 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new Error('User already exists');
     };
 
-    // Hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    if (password === confirmPassword) {
+        // Hash password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
-    // Create user
-    const user = await User.create({
-        email,
-        password: hashedPassword,
-        firstName: '',
-        lastName: '',
-        gender: '',
-        mobile: '',
-        address: '',
-        booksLiked: [],
-        booksPurchased: []
-    });
-
-    if (user) {
-        res.status(201).json({
-            _id: user.id,
-            email: user.email,
-            token: generateToken(user._id),
+        // Create user
+        const user = await User.create({
+            email,
+            password: hashedPassword,
+            firstName: '',
+            lastName: '',
+            gender: '',
+            mobile: '',
+            address: '',
+            booksLiked: [],
+            booksPurchased: []
         });
+
+        if (user) {
+            res.status(201).json({
+                _id: user.id,
+                email: user.email,
+                token: generateToken(user._id),
+            });
+        }
+        else {
+            res.status(400);
+            throw new Error('Invalid user data');
+        };
     }
     else {
         res.status(400);
-        throw new Error('Invalid user data');
+        throw new Error('Password is not matching');
     };
 });
 
