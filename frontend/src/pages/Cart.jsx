@@ -6,7 +6,7 @@ class Cart extends React.Component {
     render() {
         return (
             <div className="cart-container">
-                <Link to='/' id='back-to-homepage' className="fas fa-backward"></Link>
+                <Link to='/logged' id='back-to-homepage' className="fas fa-backward"></Link>
                 <div className="cart">
                     <h3>My Cart</h3>
                     <div className="books-price">

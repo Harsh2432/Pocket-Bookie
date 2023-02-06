@@ -17,6 +17,7 @@ class LoggedInPage extends React.Component {
         super(props);
         this.searchActive = this.searchActive.bind(this);
         this.optionsActive = this.optionsActive.bind(this);
+        this.optionsDisable = this.optionsDisable.bind(this);
     };
     searchActive() {
         const searchForm = document.querySelector('.search-form');
@@ -26,7 +27,18 @@ class LoggedInPage extends React.Component {
         });
     };
     optionsActive() {
-
+        const userBtn = document.querySelector('.user-btn');
+        const links = document.querySelector('.links');
+        userBtn.addEventListener('mouseover', () => {
+            links.classList.add('active');
+        });
+    };
+    optionsDisable() {
+        const links = document.querySelector('.links');
+        const navbar = document.querySelector('.navbar');
+        navbar.addEventListener('mouseover', () => {
+            links.classList.remove('active');
+        });
     };
     render() {
         return (
@@ -45,33 +57,31 @@ class LoggedInPage extends React.Component {
                         <div className="icons">
                             <div id="search-btn" className="fas fa-search" onClick={this.searchActive}></div>
                             <Link to='/cart' className="fas fa-shopping-cart"></Link>
-                            <div className="fas fa-user logo">
+                            <div className="fas fa-user logo user-btn" onMouseOver={this.optionsActive}>
                                 <span>&nbsp;Harsh&nbsp;</span>
                             </div>
-                            <div className="options active">
 
-                                <form className="links">
-                                    <Link to="/profile">
-                                        <span className="profile"><i className="fas fa-id-card"></i>&nbsp;&nbsp;My Profile</span>
-                                    </Link>
-                                    <Link to="/liked">
-                                        <span className="liked"><i className="fas fa-heart"></i>&nbsp;&nbsp;My Liked Books</span>
-                                    </Link>
-                                    <Link to="/orders">
-                                        <span className="liked"><i className="fas fa-box"></i>&nbsp;&nbsp;My Orders</span>
-                                    </Link>
-                                    <Link to="/">
-                                        <span className="liked"><i className="fas fa-power-off"></i>&nbsp;&nbsp;Logout</span>
-                                    </Link>
-                                </form>
-
+                            <div className="links">
+                                <div className="link">
+                                    <Link to='/profile'><i className="fas fa-id-card"><span>&nbsp;&nbsp;My Profile</span></i></Link>
+                                </div>
+                                <div className="link">
+                                    <Link to="/liked"><i className="fas fa-heart"><span>&nbsp;&nbsp;My Liked Books</span></i></Link>
+                                </div>
+                                <div className="link">
+                                    <Link to="/orders"><i className="fas fa-box"><span>&nbsp;&nbsp;My Orders</span></i></Link>
+                                </div>
+                                <div className="link">
+                                    <Link to="/"><i className="fas fa-power-off"><span>&nbsp;&nbsp;Logout</span></i></Link>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
 
                     <div className="header-2">
-                        <nav className="navbar">
+                        <nav className="navbar" onMouseOver={this.optionsDisable}>
                             <a href="#home">home</a>
                             <a href="#featured">featured</a>
                             <a href="#arrivals">arrivals</a>
